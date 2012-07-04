@@ -8,7 +8,7 @@ NewslettersApp::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.action_mailer.default_url_options = { :host => "http://floating-sky.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "https://quiet-ocean-8929.herokuapp.com" }
   
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = true
