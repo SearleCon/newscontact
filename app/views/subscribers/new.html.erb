@@ -1,0 +1,26 @@
+<%= provide(:title, 'Subscribe') %>
+<h1>Subscribe to our Newsletter</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@subscriber) do |f| %>
+    
+      <%= render 'shared/subscribe_error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.submit "Subscribe Now!", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<br>
+<br>
+<% render 'form' %>
+<% link_to 'Back', root_path %>
+
+

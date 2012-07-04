@@ -1,0 +1,23 @@
+<% provide(:title, @subscriber.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <p id="notice"><%= notice %></p>
+      <h1>Thank You!</h1>
+      <p>
+        <%= gravatar_for @subscriber %> 
+      </p>  
+      <p>
+        <%= @subscriber.name %> 
+      </p>
+      <p>
+        <%= @subscriber.email %>
+      </p>        
+    </section>
+  </aside>
+</div>
+
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
+<%= link_to 'Back', subscribers_path %>
+

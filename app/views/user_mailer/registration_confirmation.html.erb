@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>Hi <%= @user.name %></p>
+    <h1>Thank you for registering with Application X</h1>
+
+    <p>
+      To login to the site, just follow this link: <%= @url %>
+    </p>
+    
+    <p>
+      Your email address: <%= @user.email %>
+      <br/>
+      <%= link_to "[Edit Profile]", edit_user_path(@user) %>
+    </p>
+
+    <p>Thanks for your membership and have a great day!</p>
+  </body>
+</html>

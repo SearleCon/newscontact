@@ -1,0 +1,36 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Subscription:</b>
+  <%= @user.subscription %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+
+<%= link_to "Unsubscribe", {:controller => "subscribers", :action => "unsubscribe", :id => @user}, method: :delete %> | 
+
+<%= link_to 'Back', users_path %>
+
+<%= button_to "Unsubscribe?", {:controller => "subscribers", :action => "unsubscribe", :id => @user }, method: :delete %>

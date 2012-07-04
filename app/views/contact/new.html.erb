@@ -1,0 +1,51 @@
+
+
+<%= provide(:title, 'Contact Us') %>
+<h1>Contact Us</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+
+    <%= form_for @message, :url => contact_path do |f| %>
+    <%= render 'shared/contactus_error_messages' %>
+      <fieldset class="fields">
+
+      <% if signed_in? %>
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name, :readonly => true, :value => current_user.name, :input_html => { :value => current_user.name } %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email, :readonly => true, :value => current_user.email, :input_html => { :value => current_user.email } %>
+        </div>
+      <% else %>
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+      <% end %>
+
+        <div class="field">
+          <%= f.label :subject %>
+          <%= f.text_field :subject %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :body %>
+          <%= f.text_area :body, :rows => 5 %>
+        </div>
+      </fieldset>
+      
+      <%= f.submit "Send", class: "btn btn-primary" %> | <%= link_to 'Cancel', root_path %>
+      
+    <% end %>
+
+  </div>
+</div>    
